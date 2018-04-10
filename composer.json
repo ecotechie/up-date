@@ -1,0 +1,30 @@
+{
+    "name": "ecotechie/up-date",
+    "description": "Update plugins depending on release date",
+    "type": "wp-cli-package",
+    "homepage": "https://github.com/ecotechie/up-date",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Sergio Scabuzzo",
+        "email": "accounts@ecotechie.io",
+        "homepage": "https://www.ecotechie.io"
+      }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "files": [ "command.php" ]
+    },
+    "require": {
+        "wp-cli/wp-cli": "^1.1.0"
+    },
+    "require-dev": {
+        "behat/behat": "~2.5"
+    },
+    "extra": {
+      "commands": [
+        "plugin up-date"
+      ]
+    }
+}
