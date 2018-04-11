@@ -6,7 +6,7 @@
 // TODO: Install previous version if older than X days and new update just came output.
 // TODO: Check for security/vulnerability updates and apply.
 
-if ( ! defined( 'WP_CLI' ) && WP_CLI ) {
+if ( ! class_exists( 'WP_CLI' ) ) {
 	return;
 }
 
@@ -139,6 +139,4 @@ class Custom_Update extends WP_CLI_Command {
 	}
 }
 
-if ( class_exists( 'WP_CLI' ) ) {
-	WP_CLI::add_command( 'plug-up', 'Custom_Update' );
-}
+WP_CLI::add_command( 'plug-up', 'Custom_Update' );
