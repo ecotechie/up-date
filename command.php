@@ -107,6 +107,10 @@ class Custom_Update extends WP_CLI_Command {
 		foreach ( $plugins_by_date as $plugin => $value ) {
 			$install_me .= $value['name'] . ' ';
 		}
+		if ( ! $install_me ) {
+			WP_CLI::warning( 'There are no plugins to update' );
+			return;
+		}
 		$format = WP_CLI\Utils\get_flag_value( $assoc_args, 'format', 'table' );
 		WP_CLI::line( WP_CLI::colorize( "%USelected plugin updates:%n" ) );
 		WP_CLI\Utils\format_items(
