@@ -89,7 +89,7 @@ class Custom_Update extends WP_CLI_Command {
 	private function get_plugins_by_date( $plugins_updateable, $args, $assoc_args = array() ) {
 		$days = WP_CLI\Utils\get_flag_value( $assoc_args, 'days', '3' );
 		foreach ( $plugins_updateable as $plugin => $value ) {
-			if ( $value['update_age'] <= $days ) {
+			if ( $value['update_age'] < $days ) {
 				unset( $plugins_updateable[ $plugin ] );
 			}
 		}
